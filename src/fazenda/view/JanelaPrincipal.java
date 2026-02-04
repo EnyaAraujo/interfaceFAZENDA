@@ -7,7 +7,7 @@ public class JanelaPrincipal extends JFrame {
 
     private JPanel painelLateral;
     private CardLayout cardLayout;
-    private PainelFazenda painelFazenda; // Agora referenciamos a outra classe
+    private PainelFazenda painelFazenda; 
 
     public JanelaPrincipal() {
         setTitle("Fazenda Idle");
@@ -15,17 +15,16 @@ public class JanelaPrincipal extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        // 1. Instancia o painel do desenho (que está no outro arquivo)
-        // Passamos 'this' para que o PainelFazenda consiga chamar métodos daqui (como trocar menu)
+        
         painelFazenda = new PainelFazenda(this); 
         add(painelFazenda, BorderLayout.CENTER);
 
-        // 2. Configura o painel lateral
+        
         configurarPainelLateral();
         add(painelLateral, BorderLayout.EAST);
 
         setVisible(true);
-        setLocationRelativeTo(null); // Centraliza a janela na tela
+        setLocationRelativeTo(null); 
     }
 
     private void configurarPainelLateral() {
@@ -39,7 +38,7 @@ public class JanelaPrincipal extends JFrame {
         painelLateral.add(criarMenu("Animais", "Alimentar", "Colher"), "ANIMAIS");
     }
 
-    // Método genérico para criar menus rapidinho
+    
     private JPanel criarMenu(String titulo, String btn1, String btn2) {
         JPanel p = new JPanel();
         p.add(new JLabel(titulo));
